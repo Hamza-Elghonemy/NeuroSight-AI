@@ -1,6 +1,6 @@
 # Brain CT/MRI Diagnostic System
 
-A comprehensive AI-powered diagnostic tool for classifying and analyzing brain CT/MRI scans. This system detects **Hemorrhagic Stroke**, **Ischemic Stroke**, and **Tumors**, providing clinician-friendly visualizations and pixel-level lesion segmentation.
+An AI-powered diagnostic tool for classifying and analyzing brain CT/MRI scans. This system detects **Hemorrhagic Stroke**, **Ischemic Stroke**, and **Tumors**, providing clinician-friendly visualizations and pixel-level lesion segmentation.
 
 ## 🌟 Features
 
