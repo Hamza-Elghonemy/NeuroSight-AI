@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+streamlit
+opencv-python
+matplotlib
+numpy
+pandas
+scikit-learn
+jupyter
+notebook
+pillow
+tqdm
+grad-cam
+nibabel
