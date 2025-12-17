@@ -1,75 +1,67 @@
-# Brain CT/MRI Diagnostic System
+# NeuroSight-AI: Brain CT/MRI Diagnostic System
 
-An AI-powered diagnostic tool for classifying and analyzing brain CT/MRI scans. This system detects **Hemorrhagic Stroke**, **Ischemic Stroke**, and **Tumors**, providing clinician-friendly visualizations and pixel-level lesion segmentation.
+**NeuroSight-AI** is a comprehensive, AI-powered toolkit designed to assist in the diagnosis of brain pathologies from CT and MRI scans. By leveraging state-of-the-art deep learning architectures and explainable AI techniques, it provides clinicians and researchers with accurate classifications and interpretable visual insights.
 
-## 🌟 Features
+---
 
-*   **Multi-Class Classification**: Accurately classifies scans into three critical categories:
-    *   Hemorrhagic Stroke
-    *   Ischemic Stroke
-    *   Brain Tumor
-*   **Explainable AI (Grad-CAM)**: Visualizes the model's focus regions to build trust and verify predictions.
-*   **Lesion Segmentation (Bonus)**: Uses a U-Net architecture to precisely segment lesions (e.g., hemorrhages) from healthy tissue.
-*   **Concept Bottleneck Model (CBM)**: Offers an interpretable alternative to standard Black-Box CNNs by learning intermediate concepts.
-*   **Interactive Web App**: A user-friendly Streamlit interface for real-time analysis.
+## 🚀 Key Features
 
-## 🛠️ Technology Stack
+- **Multi-Class Diagnosis**: Detects **Hemorrhagic Stroke**, **Ischemic Stroke**, and **Brain Tumors**.
+- **Explainable AI (XAI)**: Integrated **Grad-CAM** visualizations to highlight suspicious regions.
+- **Lesion Segmentation**: Pixel-level localization of anomalies using **U-Net**.
+- **User-Friendly Interface**: Interactive Web App built with Streamlit.
+- **Concept Bottleneck Models**: Experimental support for interpretable concept-based learning.
 
-*   **Deep Learning**: PyTorch, torchvision, ResNet50, U-Net
-*   **Web Framework**: Streamlit
-*   **Image Processing**: OpenCV, PIL
-*   **Visualization**: Matplotlib, Grad-CAM
-*   **Device Acceleration**: MPS (Mac Silicon), CUDA (NVIDIA), CPU support
+---
 
-## 📂 Project Structure
+## 📚 Documentation
 
-```
-├── app.py                  # Main Streamlit Application
-├── requirements.txt        # Python Dependencies
-├── data/                   # Dataset Directory
-├── models/                 # Trained Model Weights (.pth)
-├── notebooks/              # Jupyter Notebooks for Training & Experiments
-│   ├── 01_Data_Preprocessing.ipynb
-│   ├── 02_Model_Training_CNN.ipynb
-│   ├── 03_Concept_Bottleneck_Model.ipynb
-│   ├── 04_Explainability_GradCAM.ipynb
-│   └── 05_Lesion_Segmentation.ipynb
-└── src/
-    └── inference.py        # Core Inference Logic & Utilities
-```
+We have prepared comprehensive documentation to help you get started:
 
-## 🚀 Getting Started
+1.  **[Installation Guide](docs/01_installation.md)**
+    *   Step-by-step setup for Mac (MPS), Linux (CUDA), and Windows.
+2.  **[User Guide](docs/02_user_guide.md)**
+    *   How to use the web interface and interpret results.
+3.  **[Model Architecture](docs/03_model_architecture.md)**
+    *   Technical deep-dive into ResNet50, CBM, and U-Net implementations.
+4.  **[Development & Contributing](docs/04_development_guide.md)**
+    *   Guide for retraining models and extending the codebase.
 
-### 1. Prerequisites
-Ensure you have Python 3.8+ installed.
+---
 
-### 2. Installation
-Clone the repository and install dependencies:
+## ⚡️ Quick Start
+
+### 1. Install Credentials
+Clone the repo and install dependencies:
+
 ```bash
+git clone https://github.com/Hamza-Elghonemy/NeuroSight-AI.git
+cd NeuroSight-AI
 pip install -r requirements.txt
 ```
 
-### 3. Running the Application
-Launch the web interface:
+### 2. Run the App
+Launch the interface:
+
 ```bash
 streamlit run app.py
 ```
-The app will open in your browser at `http://localhost:8501`.
 
-### 4. Training Models (Optional)
-If you wish to retrain the models, follow the notebooks in the `notebooks/` directory in sequential order.
-*   **Note**: The segmentation module (`05_Lesion_Segmentation.ipynb`) uses a **Hybrid Data Strategy** to generate realistic training samples without needing massive datasets.
+Visit `http://localhost:8501` to start analyzing scans.
 
-## 🧠 Model Details
+---
 
-### Standard CNN
-*   **Architecture**: ResNet50 (Pretrained on ImageNet)
-*   **Inputs**: 224x224 RGB Images
-*   **Classes**: Hemorrhagic, Ischemic, Tumor
+## 📂 Repository Structure
 
-### Lesion Segmentation (U-Net)
-*   **Architecture**: Classic U-Net with skip connections.
-*   **Output**: Binary mask highlighting the lesion area.
+```
+├── app.py                  # Main Application
+├── docs/                   # Full Documentation
+├── notebooks/              # Training & Research Notebooks
+├── src/                    # Core Inference Logic
+├── models/                 # Model Checkpoints
+└── requirements.txt        # Dependencies
+```
 
-## ⚠️ Note on Medical Advice
-This tool is for **educational and research purposes only**. It should not be used as a primary diagnostic tool in a clinical setting without further validation and regulatory approval.
+## ⚠️ Disclaimer
+
+This tool is intended for **research and educational purposes only**. It comes with no warranty and is not approved by the FDA or any medical regulatory body for clinical use.
