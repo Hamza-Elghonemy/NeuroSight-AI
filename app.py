@@ -80,6 +80,7 @@ if uploaded_file is not None:
                     img_np = np.array(image.resize((224, 224))) / 255.0
                     heatmap = np.uint8(255 * heatmap)
                     heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
+                    heatmap = cv2.cvtColor(heatmap, cv2.COLOR_BGR2RGB)
                     heatmap_float = heatmap.astype(np.float32) / 255.0
                     
                     overlay = heatmap_float * 0.4 + img_np * 0.6
