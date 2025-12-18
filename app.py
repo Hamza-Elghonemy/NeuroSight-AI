@@ -103,7 +103,7 @@ if uploaded_file is not None:
             if enable_segmentation:
                 with col2:
                     st.subheader("Lesion Segmentation")
-                    unet_model = load_model('unet', 'models/best_unet.pth')
+                    unet_model = load_model('unet', 'models/best_unet_enhanced.pth')
                     
                     with torch.no_grad():
                         seg_out = unet_model(img_tensor)

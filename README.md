@@ -1,4 +1,4 @@
-# NeuroSight-AI: Brain CT/MRI Diagnostic System
+# NeuroSight-AI: Brain CT Diagnostic System
 
 ![Banner Image](image1.png)
 ![Interface Demo](image2.png)
@@ -15,28 +15,27 @@
 - **Concept Bottleneck Models**: Interpretable concept-based reasoning (e.g., "Hyperdensity", "Mass Effect").
 - **User-Friendly Interface**: Interactive Web App built with Streamlit.
 
-
-
 ---
 
 ## Documentation
 
 We have prepared comprehensive documentation to help you get started:
 
-1.  **[Installation Guide](docs/01_installation.md)**
-    *   Step-by-step setup for Mac (MPS), Linux (CUDA), and Windows.
-2.  **[User Guide](docs/02_user_guide.md)**
-    *   How to use the web interface and interpret results.
-3.  **[Model Architecture](docs/03_model_architecture.md)**
-    *   Technical deep-dive into ResNet50, CBM, and U-Net implementations.
-4.  **[Development & Contributing](docs/04_development_guide.md)**
-    *   Guide for retraining models and extending the codebase.
+1. **[Installation Guide](docs/01_installation.md)**
+   * Step-by-step setup for Mac (MPS), Linux (CUDA), and Windows.
+2. **[User Guide](docs/02_user_guide.md)**
+   * How to use the web interface and interpret results.
+3. **[Model Architecture](docs/03_model_architecture.md)**
+   * Technical deep-dive into ResNet50, CBM, and U-Net implementations.
+4. **[Development &amp; Contributing](docs/04_development_guide.md)**
+   * Guide for retraining models and extending the codebase.
 
 ---
 
 ## ⚡️ Quick Start
 
 ### 1. Install Credentials
+
 Clone the repo and install dependencies:
 
 ```bash
@@ -46,6 +45,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Run the App
+
 Launch the interface:
 
 ```bash
