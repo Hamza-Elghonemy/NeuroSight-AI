@@ -1,20 +1,25 @@
 # NeuroSight-AI: Brain CT/MRI Diagnostic System
 
+![Banner Image](image1.png)
+![Interface Demo](image2.png)
+
 **NeuroSight-AI** is a comprehensive, AI-powered toolkit designed to assist in the diagnosis of brain pathologies from CT and MRI scans. By leveraging state-of-the-art deep learning architectures and explainable AI techniques, it provides clinicians and researchers with accurate classifications and interpretable visual insights.
 
 ---
 
-## 🚀 Key Features
+## Features
 
 - **Multi-Class Diagnosis**: Detects **Hemorrhagic Stroke**, **Ischemic Stroke**, and **Brain Tumors**.
 - **Explainable AI (XAI)**: Integrated **Grad-CAM** visualizations to highlight suspicious regions.
 - **Lesion Segmentation**: Pixel-level localization of anomalies using **U-Net**.
+- **Concept Bottleneck Models**: Interpretable concept-based reasoning (e.g., "Hyperdensity", "Mass Effect").
 - **User-Friendly Interface**: Interactive Web App built with Streamlit.
-- **Concept Bottleneck Models**: Experimental support for interpretable concept-based learning.
+
+
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 We have prepared comprehensive documentation to help you get started:
 
@@ -57,11 +62,17 @@ Visit `http://localhost:8501` to start analyzing scans.
 ├── app.py                  # Main Application
 ├── docs/                   # Full Documentation
 ├── notebooks/              # Training & Research Notebooks
-├── src/                    # Core Inference Logic
-├── models/                 # Model Checkpoints
+│   ├── 01_Data_Loader.ipynb
+│   ├── 02_Classification_Model.ipynb
+│   └── 05_Lesion_Segmentation.ipynb
+├── src/                    # Core Inference & Training Logic
+│   ├── inference.py        # Model Definitions & Utils
+│   ├── train_segmentation.py # Segmentation Training Script
+│   └── evaluate_segmentation.py # Model Evaluation Script
+├── models/                 # Model Checkpoints (CNN, CBM, UNet)
 └── requirements.txt        # Dependencies
 ```
 
-## ⚠️ Disclaimer
+## Disclaimer
 
-This tool is intended for **research and educational purposes only**. It comes with no warranty and is not approved by the FDA or any medical regulatory body for clinical use.
+This tool is intended for **research and educational purposes only**.

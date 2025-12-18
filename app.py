@@ -21,6 +21,15 @@ enable_gradcam = st.sidebar.checkbox("Show Grad-CAM Explainability", value=True)
 enable_segmentation = st.sidebar.checkbox("Show Lesion Segmentation (Bonus)", value=False)
 
 
+import pandas as pd
+
+# Concept Names for CBM
+CONCEPT_NAMES = [
+    "Hyperdensity", "Hypodensity", "Mass Effect", "Midline Shift", 
+    "Edema", "Sulcal Effacement", "Ventricular Compression", 
+    "Grey-White Loss", "Calcification", "Fracture"
+]
+
 @st.cache_resource
 def get_loaded_model(m_type):
     if m_type == "Concept Bottleneck Model (CBM)":
@@ -53,7 +62,8 @@ if uploaded_file is not None:
                 
                 st.sidebar.subheader("Latent Concepts")
                 concept_vals = concepts[0].detach().cpu().numpy()
-                st.sidebar.bar_chart(concept_vals)
+                concept_df = pd.DataFrame(concept_vals, index=CONCEPT_NAMES, columns=["Activation"])
+                st.sidebar.bar_chart(concept_df)
             else:
                 logits = model(img_tensor)
                 probs = torch.softmax(logits, dim=1)
